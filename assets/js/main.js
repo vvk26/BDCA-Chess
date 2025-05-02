@@ -6,6 +6,16 @@
 * License: https://bootstrapmade.com/license/
 */
 
+function downloadFile(filename) {
+  const link = document.createElement('a');
+  link.href = `/assets/files/${filename}`; // Adjust path if needed
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+
 (function() {
   "use strict";
 
@@ -207,5 +217,6 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
 
 })();
